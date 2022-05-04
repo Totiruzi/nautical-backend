@@ -10,18 +10,18 @@ import * as Joi from 'joi';
 
 @Module({
   imports: [
-    UsersModule,
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
         PORT: Joi.number().required(),
-        MONGODB: Joi.string().required(),
+        MONGODB_URI: Joi.string().required(),
       }),
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       autoSchemaFile: true,
       driver: ApolloDriver
     }),
+    UsersModule,
     DatabaseModule
   ],
   controllers: [AppController],

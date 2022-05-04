@@ -1,0 +1,6 @@
+├─┬ ts-loader
+│ └── ✕ missing peer webpack@^5.0.0
+└─┬ apollo-server-express
+  └── ✕ missing peer express@^4.17.1
+Peer dependencies that should be installed:
+  express@^4.17.1  webpack@^5.0.0 

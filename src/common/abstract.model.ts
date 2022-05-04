@@ -1,7 +1,7 @@
 import { Field, ObjectType } from "@nestjs/graphql";
 
 @ObjectType()
-export abstract class AbstractModel {
+export class AbstractModel {
   @Field()
   readonly _id: string;
 }
