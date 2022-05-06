@@ -1,6 +1,6 @@
-import { GetUserArgs } from './dto/args/get-user-args.dto';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CreateUserInput } from './dto/input/create-user-input.dto';
+import { GetUserArgs } from './dto/args/get-user-args.dto';
 import { User } from './models/user.model';
 import { UsersService } from './users.service';
 

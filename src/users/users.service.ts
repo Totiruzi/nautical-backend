@@ -2,7 +2,7 @@ import { Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { GetUserArgs } from './dto/args/get-user-args.dto';
 import { CreateUserInput } from './dto/input/create-user-input.dto';
 import { UsersRepository } from './users.repository';
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 import { UserDocument } from './models/user.schema';
 import { User } from './models/user.model';
 
