@@ -4,3 +4,10 @@
   └── ✕ missing peer express@^4.17.1
 Peer dependencies that should be installed:
   express@^4.17.1  webpack@^5.0.0 
+
+
+  ;  comand to start mongodb server
+  sudo systemctl start mongod.service
+
+; to check if mongodb is running
+  sudo systemctl status mongod.service

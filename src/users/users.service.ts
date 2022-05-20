@@ -21,15 +21,31 @@ export class UsersService {
   }
 
   private async validateCreateUser(createUserData: CreateUserInput) {
+    let foundUser = true;
     try {
       await this.userRepository.findOne({ email: createUserData.email });
-      throw new UnprocessableEntityException('User already exists');
+      // throw new UnprocessableEntityException('User already exists');
     } catch (error) {
-      
+      foundUser = false;
+    }
+
+    if (foundUser) {
+      throw new UnprocessableEntityException('User with this email already exists');
     }
   }
   async getUser(getUserArgs: GetUserArgs) {
     const userDocument = await this.userRepository.findOne(getUserArgs);
+    return this.toModel(userDocument);
+  }
+
+  async validateUser(email: string, password: string ) {
+    const userDocument = await this.userRepository.findOne({ email });
+    const passwordIsValid = await bcrypt.compare(password, userDocument.password);
+
+    if (!passwordIsValid) {
+      throw new UnprocessableEntityException('Invalid credentials');
+    }
+
     return this.toModel(userDocument);
   }
 
