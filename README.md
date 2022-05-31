@@ -32,6 +32,20 @@
 $ npm install
 ```
 
+## Docker
+
+```bash
+$ docker-compose up -d
+```
+
+
+## Launch mongo-express 
+
+```bash
+- Navigate to http://localhost:8081
+- Input admin/express password
+```
+
 ## Running the app
 
 ```bash
