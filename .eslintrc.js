@@ -6,7 +6,13 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['@typescript-eslint/eslint-plugin'],
-    extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:prettier/recommended',
+        'plugin:import/recommended',
+        'plugin:import/typescript',
+    ],
     root: true,
     env: {
         node: true,
@@ -28,5 +34,25 @@ module.exports = {
                 singleQuote: true,
             },
         ],
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-duplicates': 'error',
+        'import/order': [
+            1,
+            {
+                groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+            },
+        ],
+    },
+    settings: {
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.ts', '.tsx'],
+        },
+        'import/resolver': {
+            typescript: {
+                alwaysTryTypes: true,
+                project: './tsconfig.eslint.json',
+            },
+        },
     },
 };
