@@ -22,11 +22,11 @@ import * as Joi from 'joi';
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       autoSchemaFile: true,
-      driver: ApolloDriver
+      driver: ApolloDriver,
     }),
     UsersModule,
     DatabaseModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
