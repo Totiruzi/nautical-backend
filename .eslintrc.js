@@ -7,11 +7,12 @@ module.exports = {
     },
     plugins: ['@typescript-eslint/eslint-plugin'],
     extends: [
-        'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
+        'eslint:recommended',
         'plugin:import/recommended',
         'plugin:import/typescript',
+        'plugin:rxjs/recommended',
     ],
     root: true,
     env: {
@@ -43,6 +44,8 @@ module.exports = {
                 groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
             },
         ],
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['error'],
     },
     settings: {
         'import/parsers': {
