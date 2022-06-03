@@ -1,6 +1,6 @@
-import { createParamDecorator, ExecutionContext } from "@nestjs/common";
-import { GqlExecutionContext } from "@nestjs/graphql";
-import { User } from "src/users/models/user.model";
+import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+import { GqlExecutionContext } from '@nestjs/graphql';
+import { User } from '../users/models/user.model';
 
 export const getCurrentUserByContext = (context: ExecutionContext): User => {
   if (context.getType() === 'http') {
@@ -17,5 +17,5 @@ export const CurrentUser = createParamDecorator(
   (_data: unknown, context: ExecutionContext) => {
     getCurrentUserByContext(context);
     // return getCurrentUserByContext(context);
-  }
-)
+  },
+);
