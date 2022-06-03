@@ -93,8 +93,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix"
   }
 }
