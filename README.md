@@ -32,6 +32,25 @@
 $ npm install
 ```
 
+## Docker to set up mongodb and mongo-express
+
+```bash
+$ docker-compose up -d
+```
+
+```
+Database: nauticalDb
+Mongodb URI: mongodb://localhost:27017/nauticalDb
+```
+
+
+## Launch mongo-express 
+
+```bash
+- Navigate to http://localhost:8081
+- Input admin/express password
+```
+
 ## Running the app
 
 ```bash
