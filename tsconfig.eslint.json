@@ -8,6 +8,7 @@
 
     // these are the eslint-only inclusions
     ".eslintrc.js",
-    "commitlint.config.js"
+    "commitlint.config.js",
+    "init-mongo.js"
   ]
 }
