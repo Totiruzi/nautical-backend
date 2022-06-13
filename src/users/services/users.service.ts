@@ -1,10 +1,8 @@
 import { Injectable, UnprocessableEntityException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { GetUserArgs } from './dto/args/get-user-args.dto';
-import { CreateUserInput } from './dto/input/create-user-input.dto';
-import { UsersRepository } from './users.repository';
-import { UserDocument } from './models/user.schema';
-import { User } from './models/user.model';
+import { CreateUserInput, GetUserArgs } from '../dto';
+import { User, UserDocument } from '../models';
+import { UsersRepository } from '../repositories';
 
 @Injectable()
 export class UsersService {
